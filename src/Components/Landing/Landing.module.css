@@ -1,0 +1,29 @@
+.container {
+  height: 90vh;
+  width: 100%;
+  background: url('../../Images/4225773.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.landing {
+  position: relative;
+  width: 92%;
+  height: 100%;
+  padding: 5rem 0 0 1rem;
+}
+
+.heading {
+  width: 30%;
+}
+
+.button {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}

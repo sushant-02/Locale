@@ -1,0 +1,22 @@
+.linkList {
+  display: flex;
+}
+
+.listItem {
+  margin-left: 5rem;
+  position: relative;
+}
+
+.listItemBorder {
+  height: 2px;
+  background: red;
+  width: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: all .2s;
+}
+
+.listItem:hover .listItemBorder {
+  width: 100%;
+}
