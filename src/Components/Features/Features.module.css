@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("../../Images/buildings.png"), rgba(0, 0, 0, 0.664);
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  color: #ffffff;
+}
+
+.wrapper {
+  width: 92%;
+  text-align: center;
+  padding: 15rem 0 5rem;
+  position: relative;
+}
+
+.heading {
+  font-size: 4rem;
+  padding: 1rem 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.featuresList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-gap: 2rem;
+  width: 100%;
+}
+
+.feature {
+  width: 100%;
+  object-fit: cover;
+  transition: all .2s;
+  border: 3px solid #000;
+  border-radius: 5px;
+}
+
+.feature:hover {
+  border: 3px solid #E82430;
+}

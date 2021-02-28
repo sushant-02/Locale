@@ -1,0 +1,25 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.wrapper {
+  width: 60%;
+  height: 90%;
+}
+
+.heading {
+  font-size: 4rem;
+  text-align: center;
+}
+
+.howToUse {
+  width: 100%;
+  padding-top: 56.25%;
+  background-color: red;
+  margin: 5rem auto;
+}

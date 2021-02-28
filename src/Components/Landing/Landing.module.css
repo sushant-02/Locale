@@ -1,9 +1,10 @@
 .container {
   height: 90vh;
   width: 100%;
-  background: url('../../Images/4225773.jpg');
+  background: url('../../Images/landing.png');
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   color: white;
   display: flex;
   /* align-items: center; */
