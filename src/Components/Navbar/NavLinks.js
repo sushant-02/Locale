@@ -6,11 +6,11 @@ const NavLinks = () => {
     <div className={styles.wrapper}>
       <ul className={styles.linkList}>
         <li className={styles.listItem}>
-          <a href="#">Home</a>
+          <a href="#">Map</a>
           <span className={styles.listItemBorder}></span>
         </li>
         <li className={styles.listItem}>
-          <a href="#">Map</a>
+          <a href="#">Features</a>
           <span className={styles.listItemBorder}></span>
         </li>
         <li className={styles.listItem}>
