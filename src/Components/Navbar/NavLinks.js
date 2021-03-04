@@ -10,15 +10,15 @@ const NavLinks = () => {
           <span className={styles.listItemBorder}></span>
         </li>
         <li className={styles.listItem}>
-          <a href="#">Features</a>
+          <a href="#features">Features</a>
           <span className={styles.listItemBorder}></span>
         </li>
         <li className={styles.listItem}>
-          <a href="#">How to use</a>
+          <a href="#howToUse">How to use</a>
           <span className={styles.listItemBorder}></span>
         </li>
         <li className={styles.listItem}>
-          <a href="#">Contact</a>
+          <a href="#contact">Contact</a>
           <span className={styles.listItemBorder}></span>
         </li>
       </ul>

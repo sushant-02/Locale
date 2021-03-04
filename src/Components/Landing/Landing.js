@@ -4,7 +4,7 @@ import styles from './Landing.module.css';
 
 const Landing = () => {
   return (  
-    <div className={styles.container}>
+    <div id="landing" className={styles.container}>
       <div className={styles.landing}>
         <h1 className={styles.heading}>We locate<br /> works of architects<br/> for you</h1>
         <div className={styles.button}>

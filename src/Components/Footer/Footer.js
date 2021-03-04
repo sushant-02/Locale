@@ -3,7 +3,7 @@ import logoLight from "../../Images/LocaleLogoLight.png";
 
 const Footer = () => {
   return (
-    <div className={styles.container}>
+    <div id="contact" className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.socialLinks}>
           <a>

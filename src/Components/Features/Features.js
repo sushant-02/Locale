@@ -5,7 +5,7 @@ import styles from './Features.module.css';
 
 const Features = () => {
   return (
-    <div className={styles.container}> 
+    <div id="features" className={styles.container}> 
       <div className={styles.wrapper}>
         <h2 className={styles.heading}>Features</h2>
         <div className={styles.featuresList}>
