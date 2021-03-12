@@ -1,4 +1,5 @@
 import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 import styles from './HowToUse.module.css';
 
 const HowToUse = () => {
@@ -8,9 +9,11 @@ const HowToUse = () => {
         <h2 className={styles.heading}>How to use</h2>
         <div className={styles.howToUse}>
         </div>
-        <div className={styles.button}>
-          <Button text="Explore" />
-        </div>
+        <Link to="/map">
+          <div className={styles.button}>
+            <Button text="Explore" />
+          </div>
+        </Link>
       </div>
     </div>
   )

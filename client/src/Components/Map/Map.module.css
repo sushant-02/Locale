@@ -5,7 +5,8 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  /* background-color: white; */
+  /* padding: 1rem 0 0 1rem; */
+  /* background-color: grey; */
 }
 
 .wrapper {
@@ -15,12 +16,181 @@
 }
 
 .mapNav {
-  width: 45rem;
+  width: 100%;
+  max-width: 42rem;
   height: 5rem;
   position: absolute;
-  top: 3rem;
-  left: 3rem;
+  top: 1rem;
+  left: 1rem;
   border-radius: 5px;
-  color: #000;
+  color: #2D2D2D;
   background-color: #fff;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.582);
+}
+
+.cross {
+  position: absolute;
+  top: 8rem;
+  left: 38rem;
+  width: 4rem;
+  height: 4rem;
+  background: #fff;
+  box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.329);
+  border-radius: 50%;
+  z-index: 2000;
+  transition: all .2s;
+  cursor: pointer;
+}
+
+.crossUp {
+  top: 1.5rem;
+  box-shadow: none;
+}
+
+.crossItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 2px;
+  background: #2D2D2D;
+  transition: all .2s;
+}
+
+.crossItem1 {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.crossItem2 {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.rotateCross1 {
+  transform: translate(-80%, 0 ) rotate(45deg);
+  width: 42%;
+}
+
+.rotateCross2 {
+  transform: translate(-16%, 0) rotate(-45deg);
+  width: 42%;
+}
+
+.detailsContainer {
+  width: 100%;
+  max-width: 42rem;
+  height: 90%;
+  max-height: 90%;
+  background: #fff;
+  color: #2D2D2D;
+  position: absolute;
+  top: 7rem;
+  left: 1rem;
+  border-radius: 5px;
+  padding: 1rem 3rem; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.582);
+}
+
+.imgContainer {
+  width: 100%;
+  height: 25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 0% 0%;
+}
+
+.imageArch {
+  height: 100%;
+}
+
+.titleContainer {
+  background: #2D2D2D;
+  color: #fff;
+  text-align: center;
+  width: 80%;
+  padding: 1rem;
+  transform: translateY(-50%);
+}
+
+.titleContainer h2 {
+  font-size: 2.1rem;
+  text-transform: uppercase;
+}
+
+.descContainer {
+  width: 100%;
+  /* min-height: 30rem; */
+  max-height: 32rem;
+  padding: 0 1.5rem 0 0;
+  /* background-color: yellow; */
+  overflow-y: scroll;
+}
+
+.descContainer::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+  border-radius: 5px;
+}
+
+.descContainer::-webkit-scrollbar {
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+.descContainer::-webkit-scrollbar-thumb {
+	background-color: #2D2D2D;
+  border-radius: 5px;
+}
+
+.descItem {
+  width: 100%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  overflow-wrap: break-word;
+  line-height: 1.7;
+}
+
+.item {
+  width: 50%;
+  color: #2D2D2D;
+}
+
+/* Logo */
+.logoWrapper {
+  width: 12rem;
+  /* height: 5rem; */
+  /* background-color: white; */
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo {
+  width: 100%;
+}
+
+/* MarkerButton */
+.markerButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: #e82430;
+  background: transparent;
+}
+
+.markerButton:focus {
+  outline: none;
 }

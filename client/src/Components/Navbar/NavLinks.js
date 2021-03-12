@@ -1,14 +1,17 @@
-import React from 'react';
-import styles from './NavLinks.module.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./NavLinks.module.css";
 
 const NavLinks = () => {
   return (
     <div className={styles.wrapper}>
       <ul className={styles.linkList}>
-        <li className={styles.listItem}>
-          <a href="#">Map</a>
-          <span className={styles.listItemBorder}></span>
-        </li>
+        <Link to="/map">
+          <li className={styles.listItem}>
+            <a href="#">Map</a>
+            <span className={styles.listItemBorder}></span>
+          </li>
+        </Link>
         <li className={styles.listItem}>
           <a href="#features">Features</a>
           <span className={styles.listItemBorder}></span>
@@ -23,7 +26,7 @@ const NavLinks = () => {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default NavLinks;

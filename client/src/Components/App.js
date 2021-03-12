@@ -1,23 +1,20 @@
-import React from 'react';
-import styles from './App.module.css';
-import Map from './Map/Map';
-import Navbar from './Navbar/Navbar';
-import Landing from './Landing/Landing';
-import Features from '../Components/Features/Features';
-import HowToUse from './HowToUse/HowToUse';
-import Footer from './Footer/Footer';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import styles from "./App.module.css";
+import HomePage from "./HomePage/HomePage";
+import Map from "./Map/Map";
 
 const App = () => {
   return (
-    <div className={styles.container}>
-      <Navbar />
-      <Landing />
-      <Features />
-      <HowToUse />
-      <Footer />
-      {/* <Map /> */}
-    </div>
+    <Router>
+      <div className={styles.container}>
+        <Switch>
+          <Route path="/" exact component={HomePage} />
+          <Route path="/map" exact component={Map} />
+        </Switch>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
