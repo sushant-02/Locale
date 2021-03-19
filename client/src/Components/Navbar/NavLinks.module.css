@@ -5,6 +5,7 @@
 .listItem {
   margin-left: 5rem;
   position: relative;
+  padding-right: .1rem;
 }
 
 .listItemBorder {

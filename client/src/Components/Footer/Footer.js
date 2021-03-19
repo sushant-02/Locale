@@ -1,5 +1,4 @@
 import styles from "./Footer.module.css";
-import logoLight from "../../Images/LocaleLogoLight.png";
 
 const Footer = () => {
   return (
