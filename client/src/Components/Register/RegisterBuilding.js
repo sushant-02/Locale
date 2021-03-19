@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 import styles from "./Register.module.css";
 
-const Register = () => {
+const RegisterBuilding = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <h2 className={styles.head}>Register Architect</h2>
+        <h2 className={styles.head}>Register Building</h2>
         <form>
           <div className={styles.formGroup}>
             <label id="name-label" for="name">
@@ -16,81 +16,111 @@ const Register = () => {
               name="name"
               id="name"
               className={styles.formControl}
-              placeholder="Enter Architect's name"
+              placeholder="Enter Building's name"
               required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label id="date-label" for="number">
-              Date of Birth<sup>*</sup>
-            </label>
-            <input
-              type="date"
-              name="date"
-              id="date"
-              className={styles.formControl}
-              required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label id="date-label" for="number">
-              Date of Death ( if not alive )
-            </label>
-            <input
-              type="date"
-              name="date"
-              id="date"
-              className={styles.formControl}
             />
           </div>
           <div className={styles.formGroup}>
             <label id="name-label" for="name">
-              Nationality<sup>*</sup>
+              Architectural Style<sup>*</sup>
             </label>
             <input
               type="text"
               name="name"
               id="name"
               className={styles.formControl}
-              placeholder="Nationality"
+              placeholder="e.g. Neo Futurism"
               required
             />
           </div>
           <div className={styles.formGroup}>
             <label id="name-label" for="name">
-              Buildings<sup>*</sup>
+              Location<sup>*</sup>
             </label>
             <input
               type="text"
               name="name"
               id="name"
               className={styles.formControl}
-              placeholder="(If multiple separate by commas)"
+              placeholder="City, Country"
               required
             />
           </div>
           <div className={styles.formGroup}>
             <label id="name-label" for="name">
-              Awards
+              Height<sup>*</sup>
             </label>
             <input
-              type="text"
+              type="number"
+              min="1"
               name="name"
               id="name"
               className={styles.formControl}
-              placeholder="(If multiple separate by commas)"
+              placeholder="in metre"
+              required
             />
           </div>
           <div className={styles.formGroup}>
             <label id="name-label" for="name">
-              Well known for<sup>*</sup>
+              Area<sup>*</sup>
+            </label>
+            <input
+              type="number"
+              min="1"
+              name="name"
+              id="name"
+              className={styles.formControl}
+              placeholder="in square metre"
+              required
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label id="name-label" for="name">
+              Built (Started in)<sup>*</sup>
             </label>
             <input
               type="text"
               name="name"
               id="name"
               className={styles.formControl}
-              placeholder="Well known for"
+              placeholder="Started in year"
+              required
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label id="name-label" for="name">
+              Completed in (if complete)
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className={styles.formControl}
+              placeholder="Completed in year"
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label id="name-label" for="name">
+              Status<sup>*</sup>
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className={styles.formControl}
+              placeholder="complete / Incomplete"
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label id="name-label" for="name">
+              Source<sup>*</sup>
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className={styles.formControl}
+              placeholder="website link"
               required
             />
           </div>
@@ -101,6 +131,6 @@ const Register = () => {
       </div>
     </div>
   );
-};
+}
 
-export default Register;
+export default RegisterBuilding
