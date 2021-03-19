@@ -6,7 +6,7 @@ const RegisterBuilding = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <h2 className={styles.head}>Register Building</h2>
-        <form>
+        <form className={styles.formContainer}>
           <div className={styles.formGroup}>
             <label id="name-label" for="name">
               Name<sup>*</sup>

@@ -97,7 +97,7 @@ import Architect from "./Architect/Architect";
 import ArchitectProfile from "./ArchitectDetail/ArchitectProfile";
 import BuildingProfile from './BuildingDetail/BuildingProfile';
 
-import logo from "../../Images/LocaleLogoLight.png";
+import logo from "../../Images/LogoLight.png";
 import styles from "./Map.module.css";
 
 const Map = () => {

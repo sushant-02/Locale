@@ -1,6 +1,5 @@
 .container {
   background-color: #2D2D2D;
-  /* color: white; */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -8,9 +7,7 @@
 }
 
 .wrapper {
-  /* background-color: #EBEBEC; */
   width: 50%;
-  /* height: 100%; */
   padding-top: 3rem;
 }
 
@@ -26,17 +23,11 @@ label {
   margin-bottom: 0.8rem;
 }
 
-form {
+.formContainer {
   background: #ebebec;
   padding: 4rem;
   margin: 3rem 0;
   border-radius: .4rem;
-}
-
-@media (max-width: 480px) {
-  form {
-    padding: 4rem 1rem;
-  }
 }
 
 .formGroup {
@@ -61,27 +52,6 @@ form {
   border-color: #80bdff;
   outline: 0;
   box-shadow: 0 0 0 0.3rem rgba(0, 123, 255, 0.25);
-}
-
-.input-radio{
-  display: inline-block;
-  margin-right: 1rem;
-  min-height: 2rem;
-  min-width: 2rem;
-}
-
-.input-checkbox {
-  display: inline-block;
-  margin-right: 1rem;
-  height: 1.7rem;
-  width: 1.7rem;
-}
-
-.input-textarea {
-  min-height: 120px;
-  width: 100%;
-  padding: 1rem;
-  resize: vertical;
 }
 
 .submitButton {
