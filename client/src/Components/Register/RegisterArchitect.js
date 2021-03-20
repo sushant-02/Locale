@@ -58,19 +58,6 @@ const RegisterArchitect = () => {
           </div>
           <div className={styles.formGroup}>
             <label id="name-label" for="name">
-              Buildings<sup>*</sup>
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              className={styles.formControl}
-              placeholder="(If multiple separate by commas)"
-              required
-            />
-          </div>
-          <div className={styles.formGroup}>
-            <label id="name-label" for="name">
               Awards
             </label>
             <input
@@ -108,7 +95,10 @@ const RegisterArchitect = () => {
             />
           </div>
           <div className={styles.formGroup}>
-            <button type="submit" id="submit" className={styles.submitButton}> Submit </button>
+            <button type="submit" id="submit" className={styles.submitButton}>
+              {" "}
+              Submit{" "}
+            </button>
           </div>
         </form>
       </div>

@@ -1,101 +1,12 @@
-// import { useState } from "react";
-// import { Link } from "react-router-dom";
-// import ReactMapGL, { Marker } from "react-map-gl";
-// import MapNavbar from "./MapNavbar/MapNavbar";
-// import BuildingProfile from './BuildingDetail/BuildingProfile';
-// import logo from "../../Images/LocaleLogoLight.png";
-// import styles from "./Map.module.css";
-
-// const hideDetail = () => {
-//   document
-//     .querySelector(`.${styles.cross}`)
-//     .classList.toggle(`${styles.crossUp}`);
-//   document
-//     .querySelector(`.${styles.crossItem1}`)
-//     .classList.toggle(`${styles.rotateCross1}`);
-//   document
-//     .querySelector(`.${styles.crossItem2}`)
-//     .classList.toggle(`${styles.rotateCross2}`);
-// };
-
-// const Map = () => {
-//   const [viewport, setViewport] = useState({
-//     latitude: 0,
-//     longitude: 0,
-//     width: "100vw",
-//     height: "100vh",
-//     zoom: 10,
-//   });
-//   const [isCrossOpen, setIsCrossOpen] = useState(false);
-//   const [isDetailOpen, setIsDetailOpen] = useState(false);
-//   const [isArchitect, setIsArchitect] = useState(false);
-//   const [isBuilding, setIsBuilding] = useState(true);
-
-//   return (
-//     <div className={styles.container}>
-//       <div className={styles.wrapper}>
-//         <ReactMapGL
-//           {...viewport}
-//           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-//           onViewportChange={(viewport) => setViewport(viewport)}
-//           mapStyle="mapbox://styles/mapbox/dark-v10"
-//         >
-//           <Marker latitude={0} longitude={0}>
-//             <button
-//               className={styles.markerButton}
-//               onClick={(e) => {
-//                 setIsDetailOpen(true);
-//                 setIsCrossOpen(true);
-//               }}
-//             >
-//               <i class="fas fa-map-pin"></i>
-//             </button>
-//           </Marker>
-//         </ReactMapGL>
-//         <div className={styles.mapNav}>
-//           <MapNavbar />
-//         </div>
-//         {isCrossOpen && (
-//           <div
-//             className={styles.cross}
-//             onClick={(e) => {
-//               hideDetail();
-//               setIsDetailOpen(!isDetailOpen);
-//             }}
-//           >
-//             <div className={`${styles.crossItem} ${styles.crossItem1}`}></div>
-//             <div className={`${styles.crossItem} ${styles.crossItem2}`}></div>
-//           </div>
-//         )}
-
-//         {isDetailOpen && isBuilding && (
-//           <BuildingProfile />
-//         )}
-//         {isDetailOpen && isArchitect && (
-//           <ArchitectProfile />
-//         )}
-
-//         <Link to="/">
-//           <div className={styles.logoWrapper}>
-//             <img className={styles.logo} src={logo} alt="Locale" />
-//           </div>
-//         </Link>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Map;
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactMapGL, { Marker } from "react-map-gl";
-
+import axios from "axios";
 import MapNavbar from "./MapNavbar/MapNavbar";
 import SpecificBuilding from "./SpecificBuilding/SpecificBuilding";
 import Architect from "./Architect/Architect";
 import ArchitectProfile from "./ArchitectDetail/ArchitectProfile";
-import BuildingProfile from './BuildingDetail/BuildingProfile';
+import BuildingProfile from "./BuildingDetail/BuildingProfile";
 
 import logo from "../../Images/LogoLight.png";
 import styles from "./Map.module.css";
@@ -144,6 +55,23 @@ const Map = () => {
   const [selectedBuilding, setSelectedBuilding] = useState({});
   const [isBuildingSelected, setIsBuildingSelected] = useState(false);
 
+  useEffect(() => {
+    async function fetch() {
+      try {
+        const res = await axios.get("/api/search", {
+          params: { q: searchTerm },
+        });
+        if (res.status === 200) {
+          console.log(res.data);
+        }
+      } catch (e) {
+        console.log(e);
+        alert("Search failed!");
+      }
+    }
+
+    fetch();
+  }, [searchTerm]);
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -171,7 +99,12 @@ const Map = () => {
           <MapNavbar onSearchSubmit={setSearchTerm} />
         </div>
         {showArchitect && <ArchitectProfile architect={architect} />}
-        {isBuildingSelected && <BuildingProfile building={selectedBuilding} onCross={setIsBuildingSelected} />}
+        {isBuildingSelected && (
+          <BuildingProfile
+            building={selectedBuilding}
+            onCross={setIsBuildingSelected}
+          />
+        )}
         <Link to="/">
           <div className={styles.logoWrapper}>
             <img className={styles.logo} src={logo} alt="Locale" />

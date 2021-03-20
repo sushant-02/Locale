@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import styles from "./Register.module.css";
 
 const RegisterBuilding = () => {
@@ -9,7 +9,7 @@ const RegisterBuilding = () => {
         <form className={styles.formContainer}>
           <div className={styles.formGroup}>
             <label id="name-label" for="name">
-              Name<sup>*</sup>
+              Building Name<sup>*</sup>
             </label>
             <input
               type="text"
@@ -17,6 +17,19 @@ const RegisterBuilding = () => {
               id="name"
               className={styles.formControl}
               placeholder="Enter Building's name"
+              required
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label id="name-label" for="name">
+              Architect<sup>*</sup>
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className={styles.formControl}
+              placeholder="Architect must be already registered"
               required
             />
           </div>
@@ -43,6 +56,32 @@ const RegisterBuilding = () => {
               id="name"
               className={styles.formControl}
               placeholder="City, Country"
+              required
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label id="name-label" for="name">
+              Latitude<sup>*</sup>
+            </label>
+            <input
+              type="number"
+              name="name"
+              id="name"
+              className={styles.formControl}
+              placeholder="in degrees"
+              required
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <label id="name-label" for="name">
+              Longitude<sup>*</sup>
+            </label>
+            <input
+              type="number"
+              name="name"
+              id="name"
+              className={styles.formControl}
+              placeholder="in degrees"
               required
             />
           </div>
@@ -125,12 +164,28 @@ const RegisterBuilding = () => {
             />
           </div>
           <div className={styles.formGroup}>
-            <button type="submit" id="submit" className={styles.submitButton}> Submit </button>
+            <label id="name-label" for="name">
+              Image URL<sup>*</sup>
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className={styles.formControl}
+              placeholder="website link"
+              required
+            />
+          </div>
+          <div className={styles.formGroup}>
+            <button type="submit" id="submit" className={styles.submitButton}>
+              {" "}
+              Submit{" "}
+            </button>
           </div>
         </form>
       </div>
     </div>
   );
-}
+};
 
-export default RegisterBuilding
+export default RegisterBuilding;

@@ -39,14 +39,15 @@ const buildingSchema = new mongoose.Schema({
     required: true,
   },
   started: {
-    type: Date,
+    type: String,
     required: true,
   },
   completed: {
-    type: Date,
+    type: String,
   },
   status: {
     type: String,
+    required: true,
   },
   imageURL: {
     type: String,
