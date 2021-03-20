@@ -19,7 +19,7 @@ const architectSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  awards: [{ type: String }],
+  awards: { type: String },
   knownFor: {
     type: String,
     required: true,

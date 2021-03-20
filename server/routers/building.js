@@ -6,10 +6,11 @@ const router = new Router();
 router.post("/add-building", async (req, res) => {
   try {
     const architect = await Architect.findOne({ name: req.body.name });
-    console.log(architect);
-    delete req.body.name;
-    req.body.architect = architect._id;
+
     if (architect) {
+      console.log(architect);
+      delete req.body.name;
+      req.body.architect = architect._id;
       const building = new Building(req.body);
       await building.save();
       res.sendStatus(201);

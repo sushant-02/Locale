@@ -49,7 +49,7 @@ const Map = () => {
   const [isBuildingSelected, setIsBuildingSelected] = useState(false);
 
   const [viewport, setViewport] = useState({
-    latitude: architectBuildings[0].latitude || 0,
+    latitude: architectBuildings[0].latitude || building.latitude || 0,
     longitude: architectBuildings[0].longitude || 0,
     width: "100vw",
     height: "100vh",
@@ -64,6 +64,10 @@ const Map = () => {
         });
         if (res.status === 200) {
           console.log(res.data);
+          if (res.data.building) {
+            setBuilding(res.data, building);
+            setArchitect(null);
+          }
         }
       } catch (e) {
         console.log(e);
@@ -71,8 +75,7 @@ const Map = () => {
       }
     }
 
-    if(searchTerm!=="")
-      fetch();
+    if (searchTerm !== "") fetch();
   }, [searchTerm]);
 
   return (

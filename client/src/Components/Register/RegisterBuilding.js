@@ -1,7 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import styles from "./Register.module.css";
 
 const RegisterBuilding = () => {
+  const [building, setBuilding] = useState({
+    buildingName: "",
+    name: "",
+    architecturalStyle: "",
+    location: "",
+    lat: 0,
+    long: 0,
+    height: 1,
+    area: 1,
+    started: "",
+    completed: "",
+    status: "",
+    imageURL: "",
+    website: "",
+  });
+
+  const handleSubmit = async () => {
+    try {
+      const res = await axios.post("/api/add-building", building);
+      if (res.status !== 201) throw new Error("Something went wrong!");
+    } catch (e) {
+      console.log(e);
+      alert("Something went wrong!!");
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -13,11 +40,13 @@ const RegisterBuilding = () => {
             </label>
             <input
               type="text"
-              name="name"
-              id="name"
+              value={building.buildingName}
               className={styles.formControl}
               placeholder="Enter Building's name"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, buildingName: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
@@ -26,11 +55,13 @@ const RegisterBuilding = () => {
             </label>
             <input
               type="text"
-              name="name"
-              id="name"
+              value={building.name}
               className={styles.formControl}
               placeholder="Architect must be already registered"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, name: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
@@ -39,11 +70,13 @@ const RegisterBuilding = () => {
             </label>
             <input
               type="text"
-              name="name"
-              id="name"
+              value={building.architecturalStyle}
               className={styles.formControl}
               placeholder="e.g. Neo Futurism"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, architecturalStyle: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
@@ -52,11 +85,13 @@ const RegisterBuilding = () => {
             </label>
             <input
               type="text"
-              name="name"
-              id="name"
+              value={building.location}
               className={styles.formControl}
               placeholder="City, Country"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, location: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
@@ -65,11 +100,13 @@ const RegisterBuilding = () => {
             </label>
             <input
               type="number"
-              name="name"
-              id="name"
+              value={building.lat}
               className={styles.formControl}
               placeholder="in degrees"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, lat: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
@@ -78,11 +115,13 @@ const RegisterBuilding = () => {
             </label>
             <input
               type="number"
-              name="name"
-              id="name"
+              value={building.long}
               className={styles.formControl}
               placeholder="in degrees"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, long: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
@@ -92,11 +131,13 @@ const RegisterBuilding = () => {
             <input
               type="number"
               min="1"
-              name="name"
-              id="name"
+              value={building.height}
               className={styles.formControl}
               placeholder="in metre"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, height: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
@@ -106,11 +147,13 @@ const RegisterBuilding = () => {
             <input
               type="number"
               min="1"
-              name="name"
-              id="name"
+              value={building.area}
               className={styles.formControl}
               placeholder="in square metre"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, area: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
@@ -119,11 +162,13 @@ const RegisterBuilding = () => {
             </label>
             <input
               type="text"
-              name="name"
-              id="name"
+              value={building.started}
               className={styles.formControl}
               placeholder="Started in year"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, started: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
@@ -132,23 +177,44 @@ const RegisterBuilding = () => {
             </label>
             <input
               type="text"
-              name="name"
-              id="name"
+              value={building.completed}
               className={styles.formControl}
               placeholder="Completed in year"
+              onChange={(e) =>
+                setBuilding({ ...building, completed: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
-            <label id="name-label" for="name">
+            <p>
               Status<sup>*</sup>
+            </p>
+            <label>
+              <input
+                name="user-recommend"
+                value="completed"
+                type="radio"
+                className={styles.inputRadio}
+                checked={building.status === "completed"}
+                onChange={(e) =>
+                  setBuilding({ ...building, status: e.target.value })
+                }
+              />
+              Completed
             </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              className={styles.formControl}
-              placeholder="complete / Incomplete"
-            />
+            <label>
+              <input
+                name="user-recommend"
+                value="incomplete"
+                type="radio"
+                className={styles.inputRadio}
+                checked={building.status === "incomplete"}
+                onChange={(e) =>
+                  setBuilding({ ...building, status: e.target.value })
+                }
+              />
+              Incomplete
+            </label>
           </div>
           <div className={styles.formGroup}>
             <label id="name-label" for="name">
@@ -156,11 +222,13 @@ const RegisterBuilding = () => {
             </label>
             <input
               type="text"
-              name="name"
-              id="name"
+              value={building.website}
               className={styles.formControl}
               placeholder="website link"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, website: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
@@ -169,15 +237,22 @@ const RegisterBuilding = () => {
             </label>
             <input
               type="text"
-              name="name"
-              id="name"
+              value={building.imageURL}
               className={styles.formControl}
               placeholder="website link"
               required
+              onChange={(e) =>
+                setBuilding({ ...building, imageURL: e.target.value })
+              }
             />
           </div>
           <div className={styles.formGroup}>
-            <button type="submit" id="submit" className={styles.submitButton}>
+            <button
+              type="submit"
+              id="submit"
+              className={styles.submitButton}
+              onClick={handleSubmit}
+            >
               {" "}
               Submit{" "}
             </button>
