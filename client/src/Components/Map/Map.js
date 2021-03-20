@@ -12,13 +12,6 @@ import logo from "../../Images/LogoLight.png";
 import styles from "./Map.module.css";
 
 const Map = () => {
-  const [viewport, setViewport] = useState({
-    latitude: 20,
-    longitude: 79,
-    width: "100vw",
-    height: "100vh",
-    zoom: 10,
-  });
   const [architectBuildings, setArchitectBuildings] = useState([
     {
       name: "A",
@@ -34,10 +27,10 @@ const Map = () => {
     },
   ]);
   const [building, setBuilding] = useState({
-    name: "A",
-    latitude: 20.1,
-    longitude: 79.1,
-    imgURL: "",
+    // name: "A",
+    // latitude: 20.1,
+    // longitude: 79.1,
+    // imgURL: "",
   });
   const [isArchitect, setIsArchitect] = useState(true);
   const [showArchitect, setShowArchitect] = useState(true);
@@ -55,6 +48,14 @@ const Map = () => {
   const [selectedBuilding, setSelectedBuilding] = useState({});
   const [isBuildingSelected, setIsBuildingSelected] = useState(false);
 
+  const [viewport, setViewport] = useState({
+    latitude: architectBuildings[0].latitude || 0,
+    longitude: architectBuildings[0].longitude || 0,
+    width: "100vw",
+    height: "100vh",
+    zoom: 10,
+  });
+
   useEffect(() => {
     async function fetch() {
       try {
@@ -70,8 +71,10 @@ const Map = () => {
       }
     }
 
-    fetch();
+    if(searchTerm!=="")
+      fetch();
   }, [searchTerm]);
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
