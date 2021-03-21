@@ -5,8 +5,6 @@
   align-items: center;
   justify-content: center;
   color: #fff;
-  /* padding: 1rem 0 0 1rem; */
-  /* background-color: grey; */
 }
 
 .wrapper {
@@ -15,6 +13,7 @@
   position: relative;
 }
 
+/********** Map Searchbar **********/
 .mapNav {
   width: 100%;
   max-width: 42rem;
@@ -25,57 +24,61 @@
   border-radius: 5px;
   color: #2D2D2D;
   background-color: #fff;
-  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.582);
+  box-shadow: 0 -1px 20px 0 rgba(0, 0, 0, 0.582);
 }
 
-.cross {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  width: 4rem;
-  height: 4rem;
-  background: #fff;
-  box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.329);
-  border-radius: 50%;
-  z-index: 2000;
-  transition: all .2s;
-  cursor: pointer;
+.navContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .2rem 2rem;
 }
 
-/* .crossUp {
-  top: 1.5rem;
-  box-shadow: none;
-} */
+.form {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+}
 
-.crossItem {
+.formInput {
+  width: 100%;
+  height: 90%;
+  font-size: 1.9rem;
+  border: none;
+  outline: none;
+}
+
+/********** Logo **********/
+.logoWrapper {
+  width: 12rem;
+  height: 5rem;
   position: absolute;
-  top: 50%;
+  bottom: 1rem;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  height: 2px;
-  background: #2D2D2D;
-  transition: all .2s;
+  transform: translateX(-50%);
 }
 
-.crossItem1 {
-  transform: translate(-50%, -50%) rotate(45deg);
+.logo {
+  width: 100%;
 }
 
-.crossItem2 {
-  transform: translate(-50%, -50%) rotate(-45deg);
+/********** MarkerButton **********/
+.markerButton {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 2.5rem;
+  color: #e82430;
+  background: transparent;
 }
 
-/* .rotateCross1 {
-  transform: translate(-80%, 0 ) rotate(45deg);
-  width: 42%;
+.markerButton:focus {
+  outline: none;
 }
 
-.rotateCross2 {
-  transform: translate(-16%, 0) rotate(-45deg);
-  width: 42%;
-} */
-
+/********** Architect Profile **********/
 .detailsContainer {
   width: 100%;
   max-width: 42rem;
@@ -102,13 +105,6 @@
   align-items: center;
 }
 
-.image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 0% 0%;
-}
-
 .imageArch {
   height: 100%;
 }
@@ -129,10 +125,8 @@
 
 .descContainer {
   width: 100%;
-  /* min-height: 30rem; */
   max-height: 32rem;
   padding: 0 1.5rem 0 0;
-  /* background-color: yellow; */
   overflow-y: scroll;
 }
 
@@ -161,36 +155,52 @@
   line-height: 1.7;
 }
 
+.descItemLink {
+  margin: 1.5rem auto 0;
+  width: 45%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
 .item {
   width: 50%;
   color: #2D2D2D;
 }
 
-/* Logo */
-.logoWrapper {
-  width: 12rem;
-  /* height: 5rem; */
-  /* background-color: white; */
+.itemLink {
+  color: #2D2D2D !important;
+}
+
+/********** Cross  **********/
+.cross {
   position: absolute;
-  bottom: 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.logo {
-  width: 100%;
-}
-
-/* MarkerButton */
-.markerButton {
-  border: none;
-  outline: none;
+  top: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  background: #fff;
+  box-shadow: 0 1px 10px 1px rgba(0, 0, 0, 0.329);
+  border-radius: 50%;
+  z-index: 2000;
+  transition: all .2s;
   cursor: pointer;
-  font-size: 2.5rem;
-  color: #e82430;
-  background: transparent;
 }
 
-.markerButton:focus {
-  outline: none;
+.crossItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  height: 2px;
+  background: #2D2D2D;
+  transition: all .2s;
+}
+
+.crossItem1 {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.crossItem2 {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }

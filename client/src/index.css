@@ -21,14 +21,6 @@ h1, h2 {
   font-weight: 600;
 }
 
-a, 
-a:link,
-a:visited {
-  text-decoration: none;
-  color: white;
-  cursor: pointer;
-}
-
 ul {
   list-style: none;
 }

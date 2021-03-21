@@ -8,7 +8,7 @@ const NavLinks = () => {
       <ul className={styles.linkList}>
         <Link to="/map">
           <li className={styles.listItem}>
-            <a href="#">Map</a>
+            Map
             <span className={styles.listItemBorder}></span>
           </li>
         </Link>

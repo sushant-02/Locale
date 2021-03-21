@@ -1,14 +1,12 @@
-import React from 'react';
-import styles from './Button.module.css';
+import React from "react";
+import styles from "./Button.module.css";
 
 const Button = ({ text }) => {
   return (
     <div className={styles.container}>
-      <a href="#">
-        <span className={styles.button}>{text}</span>
-      </a>
+      <span className={styles.button}>{text}</span>
     </div>
-  )
-}
+  );
+};
 
 export default Button;

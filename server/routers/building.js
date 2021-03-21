@@ -29,7 +29,7 @@ router.get("/search", async (req, res) => {
     const architect = await Architect.findOne({ name: req.query.q });
     if (architect) {
       await architect.populate("buildings").execPopulate();
-      res.send({ architect, buidlings: architect.buildings });
+      res.send({ architect, buildings: architect.buildings });
     } else {
       //try to find building by that name
       const building = await Building.findOne({
