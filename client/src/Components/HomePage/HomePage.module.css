@@ -1,0 +1,26 @@
+.homePage {
+  overflow: hidden;
+}
+
+.navSmall {
+  display: none;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navBig {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+@media only screen and (max-width: 800px) {
+  .navBig {
+    display: none;
+  }
+
+  .navSmall {
+    display: flex;
+  }
+}

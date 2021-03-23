@@ -15,7 +15,7 @@
 
 /********** Map Searchbar **********/
 .mapNav {
-  width: 100%;
+  width: 94vw;
   max-width: 42rem;
   height: 5rem;
   position: absolute;
@@ -80,7 +80,7 @@
 
 /********** Architect Profile **********/
 .detailsContainer {
-  width: 100%;
+  width: 94vw;
   max-width: 42rem;
   height: 90%;
   max-height: 90%;
@@ -95,6 +95,7 @@
   flex-direction: column;
   align-items: center;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.582);
+  z-index: 10;
 }
 
 .imgContainer {
@@ -203,4 +204,17 @@
 
 .crossItem2 {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+
+@media only screen and (max-width: 500px) {
+  .mapNav {
+    width: calc(100vw-2rem);
+    max-width: 50rem;
+  }
+  
+  .detailsContainer {
+    width: calc(100vw-2rem);
+    max-width: 50rem;
+  }
 }

@@ -45,3 +45,19 @@
   color: #fff;
   transition: all .2s;
 }
+
+@media only screen and (max-width: 500px) {
+  .container {
+    height: 8rem;
+  }
+
+  .linkWrapper {
+    height: 4rem;
+    width: 4rem;
+    margin: 0 1rem;
+  }
+
+  .link {
+    font-size: 2rem;
+  }
+}

@@ -19,7 +19,7 @@ const BuildingProfile = ({building, onCrossClick}) => {
         <div className={styles.descContainer}>
           <div className={styles.descItem}>
             <h3 className={styles.item}>Architect</h3>
-            <p className={styles.item}>Zaha Hadid</p>
+            <p className={styles.item}>{building.name || "-"}</p>
           </div>
           <div className={styles.descItem}>
             <h3 className={styles.item}>Architectural Style</h3>

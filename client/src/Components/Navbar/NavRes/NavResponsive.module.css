@@ -1,0 +1,46 @@
+/********** NavResponsive **********/
+.container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  color: #fff;
+}
+
+.navbarWrapper {
+  width: 92%;
+  height: 7vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbarLogo {
+  height: 100%;
+}
+
+/********** Overlay **********/
+.overlayContainer {
+  width: 100vw;
+  height: 90vh;
+  position: sticky;
+  top: 10vh;
+  left: 0;
+  background-color: black;
+  z-index: 12;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.itemList {
+  text-align: center;
+}
+
+.item {
+  margin: 4rem 0;
+}

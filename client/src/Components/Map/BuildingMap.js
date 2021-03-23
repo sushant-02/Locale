@@ -13,7 +13,7 @@ const BuildingMap = ({ building }) => {
     height: "100vh",
     zoom: 10,
   });
-  const [selectedBuilding, setSelectedBuilding] = useState(null);
+  const [selectedBuilding, setSelectedBuilding] = useState(building);
 
   return (
     <div>

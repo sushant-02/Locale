@@ -1,6 +1,5 @@
 import React from "react";
 
-import architectImage from "../../Images/architect.jpg";
 import styles from "./Map.module.css";
 
 const ArchitectProfile = ({ architect, setIsArchitectShown }) => {
@@ -15,8 +14,8 @@ const ArchitectProfile = ({ architect, setIsArchitectShown }) => {
         <div className={styles.imgContainer}>
           <img
             className={styles.imageArch}
-            src={architectImage}
-            alt="Building"
+            src={architect.imageURL}
+            alt="Architect"
           />
         </div>
         <div className={styles.titleContainer}>
@@ -29,7 +28,7 @@ const ArchitectProfile = ({ architect, setIsArchitectShown }) => {
           </div>
           <div className={styles.descItem}>
             <h3 className={styles.item}>Died</h3>
-            <p className={styles.item}>{architect.died}</p>
+            <p className={styles.item}>{architect.died || "-"}</p>
           </div>
           <div className={styles.descItem}>
             <h3 className={styles.item}>Nationality</h3>

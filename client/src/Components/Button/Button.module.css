@@ -48,3 +48,15 @@
   border-left-color: white;
   transition: border-color 0s ease-out 0.4s, width 0.2s ease-out 0.4s, height 0.2s ease-out .6s;
 }
+
+@media only screen and (max-width: 500px) {
+  .button {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .button {
+    padding: 1rem 2rem;
+  }
+}

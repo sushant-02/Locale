@@ -45,3 +45,16 @@
 .feature:hover {
   border: 3px solid #e82430;
 }
+
+@media only screen and (max-width: 800px) {
+  .heading {
+    margin-top: 3rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .heading {
+    margin-top: 5rem;
+    font-size: 3rem;
+  }
+}
