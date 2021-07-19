@@ -50,6 +50,12 @@
   outline: none;
 }
 
+.searchIcon {
+  font-size: 2rem;
+  padding-right: 1rem;
+  color: #2D2D2D;
+}
+
 /********** Logo **********/
 .logoWrapper {
   width: 12rem;

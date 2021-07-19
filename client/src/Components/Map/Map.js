@@ -70,6 +70,7 @@ const Map = () => {
               onSubmit={(e) => handleSearchSubmit(e)}
               className={styles.form}
             >
+              <i className={`fas fa-search ${styles.searchIcon}`}></i>
               <input
                 className={styles.formInput}
                 type="text"
